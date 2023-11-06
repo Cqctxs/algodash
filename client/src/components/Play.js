@@ -6,7 +6,7 @@ import Problem from './Problem';
 import io from "socket.io-client";
 import useAuth from '../hooks/useAuth';
 
-const socket = io.connect("http://localhost:8080"); //SERVER
+const socket = io.connect("http://34.16.144.18"); //SERVER
 
 function Play() {
     const { auth } = useAuth();

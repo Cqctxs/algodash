@@ -12,16 +12,8 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 const socketController = require('./controllers/socketController');
 
-//Connect MongoDB
-connectDB();
-app.use(credentials);
-app.use(cors(corsOptions));
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(cookieParser());
-
+//Initialize Socket.io
 const server = http.createServer(app);
-
 const io = new Server(server, {
   cors: {
     origin: "http://localhost:3000", //CLIENT
@@ -35,6 +27,14 @@ io.on("connection", (socket) => {
   socketController.win(io, socket);
   socketController.removeRoom(io, socket);
 });
+
+//Connect MongoDB
+connectDB();
+app.use(credentials);
+app.use(cors(corsOptions));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cookieParser());
 
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
