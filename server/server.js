@@ -24,7 +24,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000", //CLIENT
     methods: ["GET", "POST"],
   },
 });
@@ -47,7 +47,7 @@ app.use('/users', require('./routes/api/users'));
 
 mongoose.connection.once('open', () => {
   console.log('Connected to MongoDB');
-  server.listen(3001, () => {
+  server.listen(8080, () => {
     console.log("SERVER RUNNING");
   });
 });
