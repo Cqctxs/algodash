@@ -11,7 +11,7 @@ const eloCalculation = (Ra, Rb, Sa) => {
 }
 
 const getAllUsers = async (req, res) => {
-    const users = await User.find();
+    const users = await User.find().select('username');
     if (!users) return res.status(204).json({ 'message': 'No users found.' });
     res.json(users);
 }
