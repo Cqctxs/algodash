@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 :root {
   --text: #ffffff;
@@ -10,7 +10,7 @@
 }
 
 * {
-  font-family: "Quicksand";
+  font-family: "Fira Code";
   color: var(--text);
 }
 
@@ -235,17 +235,12 @@ margin-top: 1rem;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
   text-align: center;
 }
 
@@ -274,3 +269,7 @@ margin-top: 1rem;
 .inline p {
   margin: 0 20px;
 }
+
+.preview {
+  all: unset;
+} */
