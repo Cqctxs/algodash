@@ -41,7 +41,7 @@ function Editor() {
   return (
     <>
       <div className="flex justify-around">
-        <div className="my-8 w-2/5">
+        <form className="my-8 w-2/5">
           <h1 className="text-white text-5xl font-medium mb-8 select-none">
             Title
           </h1>
@@ -77,13 +77,26 @@ function Editor() {
           <button className="text-black bg-teal-400 px-8 py-4 text-medium rounded-full">
             Post!
           </button>
-        </div>
+        </form>
         <div className="my-8 w-2/5">
           <h1 className="text-white text-5xl font-medium mb-8 select-none">
             {title}
           </h1>
-          <p>Created by: {username}</p>
+          <p className="my-4">Created by: {username}</p>
+          <hr class="h-1 mx-auto my-8 bg-neutral-700 border-0 rounded" />
           <Markdown className="w-full prose prose-invert">{body}</Markdown>
+          <hr class="h-1 mx-auto my-8 bg-neutral-700 border-0 rounded" />
+          <h1 className="text-white text-2xl font-medium my-8 select-none">
+            Input Specification
+          </h1>
+          <Markdown className="w-full prose prose-invert">{inputspec}</Markdown>
+          <hr class="h-1 mx-auto my-8 bg-neutral-700 border-0 rounded" />
+          <h1 className="text-white text-2xl font-medium my-8 select-none">
+            Output Specification
+          </h1>
+          <Markdown className="w-full prose prose-invert">
+            {outputspec}
+          </Markdown>
         </div>
       </div>
     </>
