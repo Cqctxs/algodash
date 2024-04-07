@@ -12,8 +12,10 @@ const mongoose = require("mongoose");
 const connectDB = require("./config/dbConn");
 const socketController = require("./controllers/socketController");
 
-//Initialize Socket.io
+//Create Server
 const server = http.createServer(app);
+
+//Create Socket
 const io = new Server(server, {
   cors: {
     origin: "http://localhost:3000", //CLIENT
